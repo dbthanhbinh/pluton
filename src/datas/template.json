@@ -1,0 +1,64 @@
+{
+    "logoConfigs": {
+        "logo": "/assets/images/logo.png",
+        "footerLogo": "",
+        "smallLogo": ""
+    },
+    "menuConfigs": {
+        "primary": [
+            {
+                "key": "home",
+                "name": "Home",
+                "href": "#home"
+            },
+            {
+                "key": "service",
+                "name": "Service",
+                "href": "#service"
+            },
+            {
+                "key": "portfolio",
+                "name": "Portfolio",
+                "href": "#portfolio"
+            },
+            {
+                "key": "about",
+                "name": "About",
+                "href": "#about"
+            },
+            {
+                "key": "clients",
+                "name": "Clients",
+                "href": "#clients"
+            },
+            {
+                "key": "price",
+                "name": "Price",
+                "href": "#price"
+            },
+            {
+                "key": "contact",
+                "name": "Contact",
+                "href": "#contact"
+            }
+        ]
+    },
+    "contactConfigs" : {
+        "name": "Company name",
+        "address": "123 Fifth Avenue, 12th,Belgrade,SRB 11000",
+        "email": "ourstudio@somemail.com",
+        "hotline": "11 234 567 890",
+        "phone": "11 234 567 890",
+        "description": "Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim."
+    },
+    "socialConfigs": {
+        "faceBookLink": "https://www.facebook.com",
+        "googleLink": "https://www.facebook.com",
+        "twitterLink": "https://www.facebook.com",
+        "pinterestLink": "https://www.facebook.com"
+    },
+    "footerConfigs": {
+      "copyrightText": "© 2013 Theme by GraphBerry, Documentation"
+    }
+  }
+  

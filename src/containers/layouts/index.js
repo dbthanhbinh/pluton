@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import Header from './header'
 import Footer from './footer'
 import Slider from '../sliders'
@@ -6,10 +7,16 @@ import Service from '../services'
 import ContactUs from '../contact-us'
 import Newsletter from '../newsletter'
 
+import TemplateData from '../../datas/template.json'
+
 function Default() {
+    
   return (
     <React.Fragment>
-        <Header />
+        <Header
+            logoConfigs={_.get(TemplateData, 'logoConfigs')}
+            menuItems={_.get(TemplateData, 'menuConfigs.primary')}
+        />
         <Slider />
         <Service />
         <div className="section secondary-section " id="portfolio">
@@ -654,8 +661,13 @@ function Default() {
             </div>
         </div>
         <Newsletter />
-        <ContactUs />
-        <Footer />
+        <ContactUs
+            socialConfigs = {_.get(TemplateData, 'socialConfigs')}
+            contactConfigs = {_.get(TemplateData, 'contactConfigs')}
+        />
+        <Footer
+            footerConfigs = {_.get(TemplateData, 'footerConfigs')}
+        />
     </React.Fragment>
   )
 }

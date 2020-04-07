@@ -1,25 +1,29 @@
 import React from 'react'
 import './header.scss'
-const Header = () => {
+import ShowThumb from '../../components/show-thumb'
+
+const Header = (props) => {
+
+    let {logoConfigs, menuItems} = props
+    let {logo} = logoConfigs
     return (
         <div className="navbar">
             <div className="navbar-inner">
                 <div className="container">
-                    <a href="/" className="brand">
-                        <img src="assets/images/logo.png" width="120" height="40" alt="Logo" />
-                    </a>
+                    <ShowThumb
+                        href={`/`}
+                        aclassname='brand'
+                        src={logo} width="120" height="40" alt="Logo" />
                     <button type="button" className="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <i className="icon-menu"></i>
                     </button>
                     <div className="nav-collapse collapse pull-right">
                         <ul className="nav" id="top-navigation">
-                            <li className="active"><a href="#home">Home</a></li>
-                            <li><a href="#service">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#clients">Clients</a></li>
-                            <li><a href="#price">Price</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            {
+                                menuItems && menuItems.length > 0 && menuItems.map((item) => {
+                                    return <li key={item.key}><a href={item.href || '/'}>{item.name}</a></li>
+                                })
+                            }
                         </ul>
                     </div>
                 </div>

@@ -1,12 +1,20 @@
 import React from 'react'
-const ContactUs = () => {
+// import _ from 'lodash'
+import ShowPhone from '../../components/show-phone'
+import ShowEmail from '../../components/show-email'
+
+const ContactUs = (props) => {
+    let {contactConfigs, socialConfigs} = props
+    let {description, address, email, hotline, phone} = contactConfigs
+    let {faceBookLink, googleLink, twitterLink, pinterestLink} = socialConfigs
+    
     return (
         <div id="contact" className="contact">
             <div className="section secondary-section">
                 <div className="container">
                     <div className="title">
                         <h1>Contact Us</h1>
-                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        <p>{description}</p>
                     </div>
                 </div>
                 <div className="map-wrapper">
@@ -49,10 +57,10 @@ const ContactUs = () => {
                 </div>
                 <div className="container">
                     <div className="span9 center contact-info">
-                        <p>123 Fifth Avenue, 12th,Belgrade,SRB 11000</p>
-                        <p className="info-mail">ourstudio@somemail.com</p>
-                        <p>+11 234 567 890</p>
-                        <p>+11 286 543 850</p>
+                        <p>{address}</p>
+                        <p className="info-mail"><ShowEmail email={email}/></p>
+                        <p><ShowPhone phone={hotline}/></p>
+                        <p><ShowPhone phone={phone}/></p>
                         <div className="title">
                             <h3>We Are Social</h3>
                         </div>
@@ -60,22 +68,22 @@ const ContactUs = () => {
                     <div className="row-fluid centered">
                         <ul className="social">
                             <li>
-                                <a href="/">
+                                <a href={`${faceBookLink || '/'}`}>
                                     <span className="icon-facebook-circled"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href={`${twitterLink || '/'}`}>
                                     <span className="icon-twitter-circled"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href={`${faceBookLink || '/'}`}>
                                     <span className="icon-linkedin-circled"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/">
+                                <a href={`${pinterestLink || '/'}`}>
                                     <span className="icon-pinterest-circled"></span>
                                 </a>
                             </li>

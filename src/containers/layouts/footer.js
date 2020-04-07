@@ -1,10 +1,13 @@
 import React from 'react'
+import _ from 'lodash'
 import './footer.scss'
-const Footer = () => {
+const Footer = (props) => {
+    let {footerConfigs} = props
+    let copyrightText = _.get(footerConfigs, 'copyrightText')
     return (
         <React.Fragment>
             <div className="footer">
-                <p>&copy; 2013 Theme by <a href="http://www.graphberry.com">GraphBerry</a>, <a href="http://goo.gl/NM84K2">Documentation</a></p>
+                <p>{copyrightText}</p>
             </div>
             <div className="scrollup">
                 <a href="/">
